@@ -137,6 +137,7 @@ section#contact {
 
 .navbar {
   background-color: var(--nav-bg) !important;
+  padding: 0.8rem 0 !important;
   transition: background-color 0.4s ease;
 }
 
@@ -304,7 +305,7 @@ a:hover {
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: rgb(176, 0, 0);
   font-weight: bold;
 }
@@ -313,10 +314,34 @@ a:hover {
   cursor: default;
 }
 
+.nav-logo {
+  height: 40px;
+  width: auto;
+  margin-right: 4px;
+  transition: transform 0.3s ease;
+}
+
+.logo-text {
+  line-height: 1;
+  display: inline-block;
+  margin-top: 2px; /* Fine-tune vertical alignment if needed */
+}
+
+.navbar-brand:hover .nav-logo {
+  transform: scale(1.05);
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+  margin-right: 4px;
+  filter: brightness(0) invert(1); /* Makes the logo white for the dark footer */
+}
+
 /* TYPOGRAPHY & TITLES */
 
 .title {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   color: var(--text-color);
 }
 

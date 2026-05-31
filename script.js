@@ -277,13 +277,8 @@ if (projectModal) {
             modalWebsite.classList.add('d-none');
         }
 
-        // Handle Demo Button
-        if (demo) {
-            modalDemo.href = demo;
-            modalDemo.classList.remove('d-none');
-        } else {
-            modalDemo.classList.add('d-none');
-        }
+        // removed demo handling
+
 
         // Handle Github Button
         if (github === '#' || !github) {

@@ -86,15 +86,22 @@ ScrollReveal().reveal('.services__content', {
     reset: true
 });
 
-// Education Section
-ScrollReveal().reveal('.school-container', {
-    origin: 'bottom',
-    distance: '60px',
+// Education Section - Alternating slide in from sides
+ScrollReveal().reveal('.timeline-item.left', {
+    origin: 'left',
+    distance: '80px',
     duration: 1000,
     delay: 200,
-    interval: 200,
     opacity: 0,
-    scale: 0.85,
+    easing: 'cubic-bezier(0.5, 0, 0, 1)'
+});
+
+ScrollReveal().reveal('.timeline-item.right', {
+    origin: 'right',
+    distance: '80px',
+    duration: 1000,
+    delay: 300,
+    opacity: 0,
     easing: 'cubic-bezier(0.5, 0, 0, 1)'
 });
 

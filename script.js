@@ -86,21 +86,20 @@ ScrollReveal().reveal('.services__content', {
     reset: true
 });
 
-// Education Section - Alternating slide in from sides
+// Education Section (Timeline alternating animation)
 ScrollReveal().reveal('.timeline-item.left', {
     origin: 'left',
-    distance: '80px',
+    distance: '60px',
     duration: 1000,
     delay: 200,
     opacity: 0,
     easing: 'cubic-bezier(0.5, 0, 0, 1)'
 });
-
 ScrollReveal().reveal('.timeline-item.right', {
     origin: 'right',
-    distance: '80px',
+    distance: '60px',
     duration: 1000,
-    delay: 300,
+    delay: 200,
     opacity: 0,
     easing: 'cubic-bezier(0.5, 0, 0, 1)'
 });
@@ -360,4 +359,25 @@ document.querySelectorAll('.project-card button').forEach(btn => {
         e.stopPropagation();
     });
 });
+
+// Contact Form Handler
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('contactName').value;
+        const email = document.getElementById('contactEmail').value;
+        const subject = document.getElementById('contactSubject').value;
+        const message = document.getElementById('contactMessage').value;
+
+        const mailToLink = `mailto:josephinelorraineee@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        )}`;
+
+        window.location.href = mailToLink;
+
+        contactForm.reset();
+    });
+}
 

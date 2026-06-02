@@ -363,21 +363,51 @@ document.querySelectorAll('.project-card button').forEach(btn => {
 // Contact Form Handler
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        const name = document.getElementById('contactName').value;
-        const email = document.getElementById('contactEmail').value;
-        const subject = document.getElementById('contactSubject').value;
-        const message = document.getElementById('contactMessage').value;
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Sending...';
+        btn.disabled = true;
 
-        const mailToLink = `mailto:josephinelorraineee@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-        )}`;
+        const data = new FormData(contactForm);
 
-        window.location.href = mailToLink;
+        try {
+            const response = await fetch(contactForm.action, {
+                method: contactForm.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-        contactForm.reset();
+            if (response.ok) {
+                contactForm.reset();
+                const toastEl = document.getElementById('successToast');
+                const toast = new bootstrap.Toast(toastEl);
+                
+                // Handle progress bar animation
+                const progressBar = document.getElementById('toastProgressBar');
+                progressBar.style.transition = 'none';
+                progressBar.style.width = '100%';
+                
+                toast.show();
+                
+                // Start depleting
+                setTimeout(() => {
+                    progressBar.style.transition = 'width 3s linear';
+                    progressBar.style.width = '0%';
+                }, 50);
+            } else {
+                alert("Oops! There was a problem submitting your form.");
+            }
+        } catch (error) {
+            alert("Oops! There was a problem submitting your form.");
+        } finally {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
     });
 }
 

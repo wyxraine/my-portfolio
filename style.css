@@ -1126,3 +1126,51 @@ body.dark-theme .form-control {
 body.dark-theme .form-control::placeholder {
   color: var(--secondary-text);
 }
+
+/* Contact Section Enhancements */
+.contact-info-container {
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.contact-info-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05) !important;
+}
+
+.contact-info-item .icon-box {
+  transition: all 0.3s ease;
+}
+
+.contact-info-item:hover .icon-box {
+  transform: scale(1.1);
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+body.dark-theme .contact-info-container,
+body.dark-theme .contact-form-container {
+  background-color: var(--card-bg) !important;
+  border-color: rgba(255,255,255,0.05) !important;
+}
+
+body.dark-theme .contact-decoration {
+  opacity: 0.05 !important;
+}
+
+.custom-input {
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  transform: translateY(-2px);
+  background-color: #fff !important;
+}
+
+body.dark-theme .custom-input {
+  background-color: rgba(255,255,255,0.05) !important;
+}
+
+body.dark-theme .custom-input:focus {
+  background-color: rgba(255,255,255,0.08) !important;
+}

@@ -223,10 +223,6 @@ body.dark-theme .bg-danger-subtle {
   color: #ff6b6b !important;
 }
 
-body.dark-theme #servicesModal .text-secondary {
-  color: black !important;
-}
-
 /* Prevent Modal Shift */
 body.modal-open {
   padding-right: 0 !important;
@@ -954,6 +950,10 @@ body.dark-theme #servicesModal .text-dark {
 
 body.dark-theme #servicesModal .text-secondary {
   color: #d0d0d0 !important;
+}
+
+body.dark-theme #serviceModalTools .text-secondary {
+  color: black !important;
 }
 
 /* Vertical Timeline */

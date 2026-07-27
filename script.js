@@ -335,7 +335,7 @@ if (servicesModal) {
         toolsContainer.innerHTML = '';
         tools.split(',').forEach(tool => {
             const badge = document.createElement('span');
-            badge.className = 'badge rounded-pill bg-secondary-subtle text-secondary px-2 py-1 small';
+            badge.className = 'badge rounded-pill bg-secondary-subtle text-secondary service-tool-badge px-2 py-1 small';
             badge.textContent = tool.trim();
             toolsContainer.appendChild(badge);
         });

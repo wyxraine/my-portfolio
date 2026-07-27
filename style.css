@@ -223,6 +223,10 @@ body.dark-theme .bg-danger-subtle {
   color: #ff6b6b !important;
 }
 
+body.dark-theme .service-tool-badge {
+  color: #000000 !important;
+}
+
 /* Prevent Modal Shift */
 body.modal-open {
   padding-right: 0 !important;
